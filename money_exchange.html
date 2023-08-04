@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mexchange.css">
+</head>
+<body>
+    <div class="main">
+        <div class="image">
+            <img src ="https://www.exiap.com/wp-content/uploads/2018/10/currency-exchange-illus.png">
+        </div>
+        <p class="main-p">Exchange Rate Calculator</p>
+        <p class="stmt">Choose the currency and the amount to get the exchange the rate</p>
+        <div class="sub1">
+            <select id="from" class="dropdown1">
+                <option value="0">From</option>
+                <option value="1">USD</option>
+                <option value="2">EUR</option>
+                <option value="3">JPY</option>
+                <option value="4">INR</option>
+                <option value="5">WON</option>
+            </select>
+            <input type ="text" placeholder="Amount" id="amount_curr" class="amount_curr">
+        </div>
+        <div class="sub2">
+            <button class="swap" onclick="convert()">Convert</button>
+            <p class="display_rate" id="display_rate"></p>
+        </div>
+        <div class="sub3">
+            <select id="to" class="dropdown2">
+                <option value="0">To</option>
+                <option value="1">USD</option>
+                <option value="2">EUR</option>
+                <option value="3">JPY</option>
+                <option value="4">INR</option>
+                <option value="5">WON</option>
+            </select>
+            <p id="display" class="display"></p>
+        </div>
+    </div>
+    <script>
+        function convert(){
+        var from_curr = document.getElementById("from").value;
+        var initial_curr = document.getElementById("amount_curr").value;
+        var to_curr = document.getElementById("to").value;
+        if (from_curr == 1) {
+            if(to_curr == 1){
+            document.getElementById("display").innerHTML = initial_curr;
+            document.getElementById("display_rate").innerHTML= "1 USD = 1 USD";
+            }
+            else if(to_curr == 2){
+            document.getElementById("display").innerHTML = initial_curr*0.91;
+            document.getElementById("display_rate").innerHTML= "1 USD = 0.91 EUR ";
+            }
+            else if(to_curr == 3){
+            document.getElementById("display").innerHTML = initial_curr*142.49;
+            document.getElementById("display_rate").innerHTML= "1 USD = 142.49 JPY";
+            }
+            else if(to_curr == 4){
+            document.getElementById("display").innerHTML = initial_curr*82.25;
+            document.getElementById("display_rate").innerHTML= "1 USD = 82.85 INR";
+            }
+            else if(to_curr == 5){
+            document.getElementById("display").innerHTML = initial_curr*1298.98;
+            document.getElementById("display_rate").innerHTML= "1 USD = 1,298.98 KRW";
+            }
+            else{
+            document.getElementById("display").innerHTML = "PLease select currency type";
+            document.getElementById("display_rate").innerHTML= "-";
+            }
+        }
+        if (from_curr == 2) {
+            if(to_curr == 1){
+            document.getElementById("display").innerHTML = initial_curr*1.10;
+            document.getElementById("display_rate").innerHTML= "1 EUR = 1.10 USD";
+            }
+            else if(to_curr == 2){
+            document.getElementById("display").innerHTML = initial_curr;
+            document.getElementById("display_rate").innerHTML= "1 EUR = 1 EUR ";
+            }
+            else if(to_curr == 3){
+            document.getElementById("display").innerHTML = initial_curr*156.06 ;
+            document.getElementById("display_rate").innerHTML= "1 EUR = 156.06  JPY";
+            }
+            else if(to_curr == 4){
+            document.getElementById("display").innerHTML = initial_curr*91.11;
+            document.getElementById("display_rate").innerHTML= "1 EUR = 91.11 INR";
+            }
+            else if(to_curr == 5){
+            document.getElementById("display").innerHTML = initial_curr*1400.73;
+            document.getElementById("display_rate").innerHTML= "1 EUR = 1400.73 KRW";
+            }
+            else{
+            document.getElementById("display").innerHTML = "PLease select currency type";
+            document.getElementById("display_rate").innerHTML= "-";
+            }
+        }
+
+        if (from_curr == 3) {
+            if(to_curr == 1){
+            document.getElementById("display").innerHTML = initial_curr*0.0071 ;
+            document.getElementById("display_rate").innerHTML= "1 JPY = 0.0071 USD";
+            }
+            else if(to_curr == 2){
+            document.getElementById("display").innerHTML = initial_curr*0.0064;
+            document.getElementById("display_rate").innerHTML= "1 JPY = 0.0064 EUR ";
+            }
+            else if(to_curr == 3){
+            document.getElementById("display").innerHTML = initial_curr;
+            document.getElementById("display_rate").innerHTML= "1 JPY = 1 JPY";
+            }
+            else if(to_curr == 4){
+            document.getElementById("display").innerHTML = initial_curr*0.58 ;
+            document.getElementById("display_rate").innerHTML= "1 JPY =0.58 INR";
+            }
+            else if(to_curr == 5){
+            document.getElementById("display").innerHTML = initial_curr*9.21;
+            document.getElementById("display_rate").innerHTML= "1 JPY = 9.21 KRW";
+            }
+            else{
+            document.getElementById("display").innerHTML = "PLease select currency type";
+            document.getElementById("display_rate").innerHTML= "-";
+            }
+        }
+
+        if (from_curr == 4) {
+            if(to_curr == 1){
+            document.getElementById("display").innerHTML = initial_curr*0.012 ;
+            document.getElementById("display_rate").innerHTML= "1 INR =0.012 USD";
+            }
+            else if(to_curr == 2){
+            document.getElementById("display").innerHTML = initial_curr*0.011 ;
+            document.getElementById("display_rate").innerHTML= "1 INR = 0.011 EUR ";
+            }
+            else if(to_curr == 3){
+            document.getElementById("display").innerHTML = initial_curr*1.71;
+            document.getElementById("display_rate").innerHTML= "1 INR =1.71 JPY";
+            }
+            else if(to_curr == 4){
+            document.getElementById("display").innerHTML = initial_curr;
+            document.getElementById("display_rate").innerHTML= "1 INR = 1 INR";
+            }
+            else if(to_curr == 5){
+            document.getElementById("display").innerHTML = initial_curr*15.76;
+            document.getElementById("display_rate").innerHTML= "1 INR = 15.76 KRW";
+            }
+            else{
+            document.getElementById("display").innerHTML = "PLease select currency type";
+            document.getElementById("display_rate").innerHTML= "-";
+            }
+        }
+        
+        if (from_curr == 5) {
+            if(to_curr == 1){
+            document.getElementById("display").innerHTML = initial_curr* 0.00077 ;
+            document.getElementById("display_rate").innerHTML= "1 KRW = 0.00077 USD";
+            }
+            else if(to_curr == 2){
+            document.getElementById("display").innerHTML = initial_curr*0.00070 ;
+            document.getElementById("display_rate").innerHTML= "1 KRW = 0.00070 EUR ";
+            }
+            else if(to_curr == 3){
+            document.getElementById("display").innerHTML = initial_curr*0.11;
+            document.getElementById("display_rate").innerHTML= "1 KRW = 0.11 JPY";
+            }
+            else if(to_curr == 4){
+            document.getElementById("display").innerHTML = initial_curr*0.063;
+            document.getElementById("display_rate").innerHTML= "1 KRW = 0.063 INR";
+            }
+            else if(to_curr == 5){
+            document.getElementById("display").innerHTML = initial_curr;
+            document.getElementById("display_rate").innerHTML= "1 KRW = 1 KRW";
+            }
+            else{
+            document.getElementById("display").innerHTML = "PLease select currency type";
+            document.getElementById("display_rate").innerHTML= "-";
+            }
+        }
+    }
+
+        
+
+
+    </script>
+</body>
+</html>
